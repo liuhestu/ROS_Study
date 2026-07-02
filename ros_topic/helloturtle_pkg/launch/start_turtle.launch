@@ -1,0 +1,5 @@
+<launch>
+    <node pkg="helloturtle_pkg" type="helloturtle_node" name="hello" output="screen" />
+    <node pkg="turtlesim" type="turtlesim_node" name="t1"/>
+    <node pkg="rqt_graph" type="rqt_graph" name=""/>
+</launch>

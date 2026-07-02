@@ -1,0 +1,5 @@
+<launch>
+    <node pkg="hello_pub_sub_pkg" type="hellopub_node" name="talker" output="screen" />
+    <node pkg="hello_pub_sub_pkg" type="hellosub_node" name="listener" output="screen" />
+    <node pkg="rqt_graph" type="rqt_graph" name=""/>
+</launch>

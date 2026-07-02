@@ -1,0 +1,12 @@
+<launch>
+    <!-- 启动乌龟节点与键盘控制节点 -->
+    <node pkg="turtlesim" type="turtlesim_node" name="turtle1" output="screen" />
+    <node pkg="turtlesim" type="turtle_teleop_key" name="key_control" output="screen"/>
+    <!-- 启动创建第二只乌龟的节点 -->
+    <node pkg="follow_turtle_pkg" type="new_turtle_node" name="turtle2" output="screen" />
+    <!-- 启动两个坐标发布节点 -->
+    <node pkg="follow_turtle_pkg" type="pub_turtle_node" name="pub1" output="screen" args="turtle1" />
+    <node pkg="follow_turtle_pkg" type="pub_turtle_node" name="pub2" output="screen" args="turtle2" />
+    <!-- 启动坐标转换节点 -->
+    <node pkg="follow_turtle_pkg" type="sub_turtle_node" name="following" output="screen" />
+</launch>

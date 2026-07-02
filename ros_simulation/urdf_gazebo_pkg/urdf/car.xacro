@@ -1,0 +1,11 @@
+<!-- 组合小车底盘与摄像头 -->
+<robot name="my_car" xmlns:xacro="http://wiki.ros.org/xacro">
+    <!-- 惯性 -->
+    <xacro:include filename="car_inertial.xacro" />
+    <!-- 底盘、相机、雷达 -->
+    <xacro:include filename="car_base.xacro" />
+    <xacro:include filename="car_camera.xacro" />
+    <xacro:include filename="car_laser.xacro" />
+    <!-- 运动控制 -->
+    <xacro:include filename="gazebo/car_move.xacro" />
+</robot>

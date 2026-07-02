@@ -1,0 +1,7 @@
+<launch>
+    <!-- 启动SLAM节点 -->
+    <include file="$(find navigation_pkg)/launch/slam_gmapping.launch" />
+    <!-- 运行move_base节点 -->
+    <include file="$(find navigation_pkg)/launch/move_base.launch" />
+
+</launch>

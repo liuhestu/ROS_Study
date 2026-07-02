@@ -1,0 +1,45 @@
+<robot name="mycar">
+    <link name="base_link">
+        <visual>
+            <!-- 形状 -->
+            <geometry>
+                <!-- 长方体的长宽高 -->
+                <box size="1.2 1 0.5" />
+                <!-- 圆柱，半径和长度 -->
+                <!-- <cylinder radius="0.5" length="0.1" />  -->
+                <!-- 球体，半径-->
+                <!-- <sphere radius="0.3" /> -->
+                <!-- <mesh filename="package://urdf_rviz_pkg/meshes/autolabor_mini.stl"/> -->
+            </geometry>
+            <!-- xyz坐标 rpy翻滚俯仰与偏航角度(3.14=180度 1.57=90度) -->
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <!-- 颜色: r=red g=green b=blue a=alpha -->
+            <material name="black">
+                <color rgba="0.7 0.5 0 0.8" />
+            </material>
+        </visual>
+    </link>
+
+     <!-- 摄像头 -->
+    <link name="camera">
+        <visual>
+            <geometry>
+                <box size="0.2 0.3 0.1  " />
+            </geometry>
+            <origin xyz="0.5 0 0.25" rpy="0 0 0" />
+            <material name="red">
+                <color rgba="1 0 0 0.8" />
+            </material>
+        </visual>
+    </link>
+
+    <!-- 关节 -->
+    <joint name="camera2baselink" type="continuous">
+        <parent link="base_link"/>
+        <child link="camera" />
+        <!-- 需要计算两个 link 的物理中心之间的偏移量 -->
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <axis xyz="0 0 1" />
+    </joint>
+</robot>
+
